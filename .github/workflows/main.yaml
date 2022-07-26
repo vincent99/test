@@ -16,5 +16,5 @@ jobs:
           username: ${{secrets.REGISTRY_USERNAME}}
           password: ${{secrets.REGISTRY_PASSWORD}}
       - run: |
-          acorn build -t vincent99/acorn-nginx .
-          acorn push vincent99/acorn-nginx
+          acorn build -t docker.io/vincent99/acorn-nginx .
+          acorn push docker.io/vincent99/acorn-nginx
