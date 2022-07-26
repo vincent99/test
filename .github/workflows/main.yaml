@@ -1,0 +1,19 @@
+name: main
+on:
+  push: {}
+
+jobs:
+  push:
+    steps:
+      - uses: actions/checkout@v3
+      - uses: acorn-io/actions-setup@v1
+        with:
+          token: ${{secrets.GITHUB}}
+      - uses: acorn-io/actions-login@v1
+          with:
+            registry: ${{secrets.REGISTRY_ADDRESS}}
+            username: ${{secrets.REGISTRY_USERNAME}}
+            password: ${{secrets.REGISTRY_PASSWORD}}
+      - run: |
+        acorn build -t vincent99/acorn-nginx .
+        acorn push vincent99/acorn-nginx

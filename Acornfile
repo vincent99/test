@@ -1,0 +1,17 @@
+containers: {
+  web: {
+    image: "nginx"
+    expose: [
+      "80/http"
+    ]
+    files: {
+      "/usr/share/nginx/html/index.html": "<h1>"+ args.msg +"</h1>"
+    }
+  }
+}
+
+args: {
+  // A message
+  msg: string | *"Hello World"
+}
+
