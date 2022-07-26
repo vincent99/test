@@ -1,3 +1,8 @@
+args: {
+  // A message
+  msg: "Hello World"
+}
+
 containers: {
   web: {
     image: "nginx"
@@ -9,9 +14,3 @@ containers: {
     }
   }
 }
-
-args: {
-  // A message
-  msg: string | *"Hello World"
-}
-
